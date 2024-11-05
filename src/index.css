@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.searchBtn{
+  border: 2px solid skyblue;
+  padding: 5px;
+  border-radius: 8px;
+}
+.active{
+  opacity: 1;
+}
+
