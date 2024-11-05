@@ -11,4 +11,16 @@
 .active{
   opacity: 1;
 }
+.swiperBanner{
+  height: 500px;
+  width: 500px;
+  color: white;
+  background-color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
+.Productswiper{
+  margin-top: 20px;
+}
