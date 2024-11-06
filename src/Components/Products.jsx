@@ -15,10 +15,10 @@ const Products = () => {
     <div className="ProductsCont flex flex-wrap m-10 justify-center items-center gap-10">
 
     {fetching&&<LoadingSpinner/>}
-    {console.log(ProductList)}
+    {console.log(ProductList.products)}
     {
       !fetching &&
-      ProductList.products.map((elem, id)=><ProductCard key={id} productTitle={elem.title} productPrice={elem.price} productDesc={elem.description}/>)
+      ProductList.products.map((elem)=><ProductCard thumbnail={elem.thumbnail} key={elem.id} productTitle={elem.title} productPrice={elem.price} productDesc={elem.description}/>)
     }
     
     

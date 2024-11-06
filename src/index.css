@@ -2,7 +2,21 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: 'Plank';
+  src: url(./assets/PLANK___.TTF);
+}
 
+@font-face {
+  font-family: 'prompt';
+  src: url(./assets/Prompt-Medium.ttf);
+}
+*{
+  font-family: 'prompt';
+}
+.BrandName{
+  font-family: 'Plank';
+}
 .searchBtn{
   border: 2px solid skyblue;
   padding: 5px;
@@ -15,12 +29,21 @@
   height: 500px;
   width: 500px;
   color: white;
-  background-color: black;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-
+.bannerImg{
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
 .Productswiper{
   margin-top: 20px;
+}
+.productCard{
+  width: fit-content;
+}
+.ProductDesc{
+  max-width: 400px;
 }

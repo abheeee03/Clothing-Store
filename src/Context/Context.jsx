@@ -11,14 +11,12 @@ const ProductContextProvider = ({children})=>{
   useEffect(() => {
     const Controller = new AbortController()
     const signal = Controller.signal
-    console.log('getting data')
-    fetch('https://dummyjson.com/products?limit=15', {signal})
+    fetch('https://dummyjson.com/products/category/mens-shirts', {signal})
     .then(
       res => res.json()
     ).then(
       (obj) => {setProductList(obj)
         setfetching(false)
-        console.log(ProductList)
       }
     )
   

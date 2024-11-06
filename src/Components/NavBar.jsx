@@ -7,8 +7,9 @@ import Register from '../Pages/Register';
 
 const NavBar = () => {
   return (
+    <>
     <div className=' fixed w-[100%] flex items-center justify-between p-4 top-0 z-100 bg-white'>
-      <h1 className='ml-4 text-xl'>Bazaar</h1>
+      <h1 className='BrandName ml-4 text-xl'>Red Pill</h1>
       <div className="SearchBarDiv">
         <input type="text" placeholder='Search Products.....' className="text-center h-[30px] w-[300px]" />
         <button className='ml-6 searchBtn'>Search</button>
@@ -21,6 +22,8 @@ const NavBar = () => {
         <a href=""> <CiShop />Become Supplier</a>
       </div>
     </div>
+    <hr />
+    </>
   )
 }
 

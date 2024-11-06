@@ -7,8 +7,10 @@ const ProductCard = (props) => {
   
   return (
 <>
-        <div className='flex flex-col justify-center items-center h-[350px] rounded-xl p-5 bg-gray-300 w-[400px]'>
-        <div className="productImg bg-black"></div>
+        <div className='productCard flex flex-col justify-center items-center rounded-xl p-5 bg-gray-300 '>
+        <div className="productImg">
+          <img src={props.thumbnail} alt="" />
+        </div>
     <div className="ProductTitle text-xl">
             {props.productTitle}
         </div>
