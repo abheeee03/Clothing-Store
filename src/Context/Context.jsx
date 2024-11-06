@@ -1,12 +1,12 @@
-import { createContext, useEffect } from "react"
+import { createContext, useEffect, useState } from "react"
 
 
 export const ProductContext = createContext([])
 
 
 const ProductContextProvider = ({children})=>{
-
-  let ProductList = []
+  const [fetching, setfetching] = useState(true)
+  const [ProductList, setProductList] = useState([])
 
   useEffect(() => {
     const Controller = new AbortController()
@@ -16,7 +16,8 @@ const ProductContextProvider = ({children})=>{
     .then(
       res => res.json()
     ).then(
-      (obj) => {ProductList = obj
+      (obj) => {setProductList(obj)
+        setfetching(false)
         console.log(ProductList)
       }
     )
@@ -30,16 +31,8 @@ const ProductContextProvider = ({children})=>{
 
 
 
-
-  const productarr = [{
-    Title: 'IPhone 16 Pro Max',
-    desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta laudantium alias perferendis corrupti recusandae? Nemo mollitia aliquam sint eveniet ducimus!',
-    Price: 150000
-  }]
-
-
   return(
-    <ProductContext.Provider  value={{productarr}}>
+    <ProductContext.Provider  value={{fetching, ProductList}}>
       {children}
     </ProductContext.Provider>
   )

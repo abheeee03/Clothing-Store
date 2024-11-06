@@ -1,11 +1,12 @@
 import React, { useContext } from 'react'
 import ProductCard from './ProductCard'
 import { ProductContext } from '../Context/Context'
+import LoadingSpinner from './LoadingSpinner'
 
 const Products = () => {
 
   
-  const {productarr} = useContext(ProductContext)
+  const {fetching, ProductList} = useContext(ProductContext)
 
 
   return (
@@ -13,12 +14,11 @@ const Products = () => {
   
     <div className="ProductsCont flex flex-wrap m-10 justify-center items-center gap-10">
 
+    {fetching&&<LoadingSpinner/>}
+    {console.log(ProductList)}
     {
-      productarr.map((elem, id)=>{
-        return(<ProductCard key={id} productTitle={elem.Title} productPrice={elem.Price} productDesc={elem.desc}/>)
-      })
-
-
+      !fetching &&
+      ProductList.products.map((elem, id)=><ProductCard key={id} productTitle={elem.title} productPrice={elem.price} productDesc={elem.description}/>)
     }
     
     
