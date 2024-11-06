@@ -33,8 +33,8 @@ const ProductSwiper = () => {
       className='Productswiper'
     >
 
-    {items.map((item)=>{
-      return <SwiperSlide><p className='swiperBanner'>{item.src}</p></SwiperSlide>
+    {items.map((item, id)=>{
+      return <SwiperSlide key={id}><p className='swiperBanner'>{item.src}</p></SwiperSlide>
     })}
     </Swiper> 
     </div>

@@ -1,43 +1,29 @@
-import React, { useEffect } from 'react'
+import React, { useContext } from 'react'
 import ProductCard from './ProductCard'
+import { ProductContext } from '../Context/Context'
 
 const Products = () => {
 
   
-  let productsObj
-  useEffect(()=>{
-    const controller = new AbortController();
-    const signal =  controller.signal;
-
-
-    fetch('https://dummyjson.com/products?limit=15', {signal})
-    .then(res => res.json())
-    .then((obj) => {
-      productsObj = obj
-    });
-
-  return (
-    controller.abort()
-  )
-
-  },[])
-  
-
+  const {productarr} = useContext(ProductContext)
 
 
   return (
     <>
+  
     <div className="ProductsCont flex flex-wrap m-10 justify-center items-center gap-10">
-    <ProductCard/>
-    <ProductCard/>
-    <ProductCard/>
-    <ProductCard/>
-    <ProductCard/>
-    <ProductCard/>
-    <ProductCard/>
-    <ProductCard/>
-    <ProductCard/>
+
+    {
+      productarr.map((elem, id)=>{
+        return(<ProductCard key={id} productTitle={elem.Title} productPrice={elem.Price} productDesc={elem.desc}/>)
+      })
+
+
+    }
+    
+    
     </div>
+    
     </>
   )
 }
