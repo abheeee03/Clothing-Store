@@ -14,9 +14,6 @@ const App = () => {
   return (
     <ProductContextProvider>
     <Home/>
-    <Login/>
-    <Register/>
-    <Supplier/>
     </ProductContextProvider>
   )
 }
