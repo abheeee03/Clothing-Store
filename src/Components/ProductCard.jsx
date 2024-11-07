@@ -9,7 +9,7 @@ const ProductCard = (props) => {
 <>
         <div className='productCard flex flex-col justify-center items-center rounded-xl p-5 bg-gray-300 '>
         <div className="productImg">
-          <img src={props.thumbnail} alt="" />
+          <img src={props.thumbnail} />
         </div>
     <div className="ProductTitle text-xl">
             {props.productTitle}

@@ -7,6 +7,7 @@ export const ProductContext = createContext([])
 const ProductContextProvider = ({children})=>{
   const [fetching, setfetching] = useState(true)
   const [ProductList, setProductList] = useState([])
+  const [clothType, setclothType] = useState("Men")
 
   useEffect(() => {
     const Controller = new AbortController()
@@ -25,12 +26,23 @@ const ProductContextProvider = ({children})=>{
     }
   }, [])
   
+  const getWomensCloth = ()=>{
+    fetch('https://dummyjson.com/products/category/womens-dresses')
+    .then(
+      response => response.json()
+    ).then(
+      (object) => {setProductList(object)
+        setfetching(false)
+      }
+    )
+
+  }
 
 
 
 
   return(
-    <ProductContext.Provider  value={{fetching, ProductList}}>
+    <ProductContext.Provider  value={{ fetching, ProductList}}>
       {children}
     </ProductContext.Provider>
   )

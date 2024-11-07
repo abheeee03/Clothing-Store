@@ -6,6 +6,9 @@ import {RouterProvider, createBrowserRouter } from 'react-router-dom'
 import Login from './Pages/Login.jsx'
 import Register from './Pages/Register.jsx'
 import Supplier from './Pages/Supplier.jsx'
+import MensClothing from './Pages/MensClothing.jsx'
+import WomensClothing from './Pages/WomensClothing.jsx'
+import KidsClothing from './Pages/KidsClothing.jsx'
 
 
 const router = createBrowserRouter([
@@ -24,6 +27,18 @@ const router = createBrowserRouter([
   {
     path: '/BecomeSupplier',
     element: <Supplier/>
+  },
+  {
+    path: '/Mens',
+    element: <MensClothing/>
+  },
+  {
+    path: '/Womens',
+    element: <WomensClothing/>
+  },
+  {
+    path: '/Kids',
+    element: <KidsClothing/>
   },
 ])
 

@@ -4,10 +4,6 @@ import ProductContextProvider from './Context/Context'
 
 
 const App = () => {
-
-
-
-
   return (
     <ProductContextProvider>
     <Home/>
