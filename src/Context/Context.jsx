@@ -17,7 +17,7 @@ const ProductContextProvider = ({children})=>{
       res => res.json()
     ).then(
       (obj) => {setProductList(obj)
-        setfetching(false)
+        // setfetching(false)
       }
     )
   

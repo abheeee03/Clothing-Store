@@ -9,12 +9,16 @@ import Supplier from './Pages/Supplier.jsx'
 import MensClothing from './Pages/MensClothing.jsx'
 import WomensClothing from './Pages/WomensClothing.jsx'
 import KidsClothing from './Pages/KidsClothing.jsx'
+import ErrorPage from './Pages/ErrorPage.jsx'
 
 
 const router = createBrowserRouter([
   {
     path: '/',
     element: <App/>
+  },{
+    path: '*',
+    element: <ErrorPage/>
   },
   {
     path: '/Login',
